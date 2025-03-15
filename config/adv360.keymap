@@ -31,7 +31,7 @@
         paste_without_formatting: paste_without_style {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(LS(LA(V)))>;
+            bindings = <&kp LG(LS(V))>;
             label = "PASTE_WITHOUT_STYLE";
         };
 
