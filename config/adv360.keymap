@@ -50,6 +50,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        ctrl_w {
+            bindings = <&cut_word>;
+            key-positions = <69 16>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
