@@ -19,10 +19,28 @@
             bindings = <&kp>, <&kp>;
         };
 
-        mod_morph_H_Ctrl: mod_morph_H_Ctrl {
+        mm_ctrl_h: mm_ctrl_h {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_MORPH_H_CTRL";
+            label = "MM_CTRL_H";
             bindings = <&kp H>, <&kp BACKSPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mm_cmd_backquote: mm_cmd_backquote {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CMD_BACKQUOTE";
+            bindings = <&kp GRAVE>, <&three_backquotes>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        mm_ctrl_w: mm_ctrl_w {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_CTRL_W";
+            bindings = <&kp W>, <&cut_word>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -74,11 +92,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1    &kp N2        &kp N3    &kp N4     &kp N5  &tog 1                                                                                       &mo 3            &kp N6             &kp N7    &kp N8     &kp N9    &kp N0    &kp BACKSPACE
-&kp EQUAL  &kp Q     &kp W         &kp E     &kp R      &kp T   &none                                                                                        &none            &kp Y              &kp U     &kp I      &kp O     &kp P     &kp BSLH
-&kp MINUS  &kp A     &kp S         &kp D     &kp F      &kp G   &none             &kp LEFT_ALT  &kp HOME      &kp PAGE_DOWN   &kp PAGE_UP                    &none            &mod_morph_H_Ctrl  &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z     &kp X         &kp C     &kp V      &kp B                                   &kp END       &kp RCMD                                                        &kp N              &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp GRAVE
-&mo 2      &kp LCMD  &kp LEFT_ALT  &kp LEFT  &kp RIGHT          &mt LSHIFT SPACE  &mt LCMD TAB  &kp ESC       &mt RSHFT LCMD  &mt LEFT_ALT LC(SINGLE_QUOTE)  &mt LCTRL ENTER                     &kp DOWN  &kp UP     &kp LBKT  &kp RBKT  &to 3
+&kp ESC    &kp N1    &kp N2        &kp N3    &kp N4     &kp N5  &tog 1                                                                                       &mo 3            &kp N6      &kp N7    &kp N8     &kp N9    &kp N0    &kp BACKSPACE
+&kp EQUAL  &kp Q     &mm_ctrl_w    &kp E     &kp R      &kp T   &none                                                                                        &none            &kp Y       &kp U     &kp I      &kp O     &kp P     &kp BSLH
+&kp MINUS  &kp A     &kp S         &kp D     &kp F      &kp G   &none             &kp LEFT_ALT  &kp HOME      &kp PAGE_DOWN   &kp PAGE_UP                    &none            &mm_ctrl_h  &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z     &kp X         &kp C     &kp V      &kp B                                   &kp END       &kp RCMD                                                        &kp N       &kp M     &kp COMMA  &kp DOT   &kp FSLH  &mm_cmd_backquote
+&mo 2      &kp LCMD  &kp LEFT_ALT  &kp LEFT  &kp RIGHT          &mt LSHIFT SPACE  &mt LCMD TAB  &kp ESC       &mt RSHFT LCMD  &mt LEFT_ALT LC(SINGLE_QUOTE)  &mt LCTRL ENTER              &kp DOWN  &kp UP     &kp LBKT  &kp RBKT  &to 3
             >;
         };
 
