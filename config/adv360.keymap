@@ -18,6 +18,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        mod_morph_H_Ctrl: mod_morph_H_Ctrl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_MORPH_H_CTRL";
+            bindings = <&kp H>, <&kp BACKSPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
